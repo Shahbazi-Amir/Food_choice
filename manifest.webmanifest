@@ -1,0 +1,4 @@
+{
+  "name":"Food Choice — چی بپزم؟","short_name":"چی بپزم؟","lang":"fa","dir":"rtl","start_url":"./","scope":"./","display":"standalone","background_color":"#f7f5ef","theme_color":"#f7f5ef","description":"انتخاب سریع غذای امروز بر اساس تاریخچه و تنوع غذایی",
+  "icons":[{"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]
+}
