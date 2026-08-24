@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f5ef" />
+  <meta name="description" content="Food Choice؛ انتخاب سریع غذای امروز بر اساس تاریخچه و تنوع غذایی" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>چی بپزم؟</title>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div><p class="eyebrow">FOOD CHOICE</p><h1>چی بپزم؟</h1></div>
+      <button id="installBtn" class="ghost hidden" type="button">نصب اپ</button>
+    </header>
+
+    <section class="card people-card" aria-label="تعداد نفرات">
+      <div><span class="muted">امروز برای</span><strong id="peopleLabel">۲ نفر</strong><span class="muted">غذا می‌پزی</span></div>
+      <div class="stepper">
+        <button id="minusPeople" type="button" aria-label="کم کردن تعداد نفرات">−</button><span id="peopleCount">2</span><button id="plusPeople" type="button" aria-label="زیاد کردن تعداد نفرات">+</button>
+      </div>
+    </section>
+
+    <section class="hero card">
+      <p class="muted">انتخاب را بسپار به من.</p>
+      <button id="suggestBtn" class="primary huge" type="button">🎲 یک غذا انتخاب کن</button>
+      <div class="quick-filters" aria-label="فیلترهای سریع">
+        <button data-mode="quick" type="button">⏱ سریع</button><button data-mode="healthy" type="button">🥗 متعادل‌تر</button><button data-mode="budget" type="button">💰 اقتصادی</button>
+      </div>
+    </section>
+
+    <section id="suggestionCard" class="card suggestion hidden" aria-live="polite">
+      <div class="suggestion-head"><div><p id="suggestionReason" class="eyebrow"></p><h2 id="mealName"></h2><p id="mealMeta" class="muted"></p></div><span id="mealEmoji" class="meal-emoji" aria-hidden="true"></span></div>
+      <div class="divider"></div>
+      <h3>برای این غذا لازم داری</h3><ul id="ingredientsList" class="ingredients"></ul>
+      <div class="actions"><button id="acceptMeal" class="primary" type="button">این را می‌پزم</button><button id="anotherMeal" class="secondary" type="button">یکی دیگر</button></div>
+      <button id="toggleRecipe" class="text-btn" type="button">دستور پخت را نشان بده</button><ol id="recipeList" class="recipe hidden"></ol>
+    </section>
+
+    <section class="card health-card">
+      <div class="section-title"><div><p class="eyebrow">تعادل این هفته</p><h2>نوبت چی هست؟</h2></div><button id="refreshHealth" class="ghost" type="button">به‌روزرسانی</button></div>
+      <p id="healthMessage" class="health-message">هنوز غذایی ثبت نشده؛ اولین وعده را ثبت کن.</p><div id="weekStats" class="stats"></div>
+    </section>
+
+    <section class="card history-card">
+      <div class="section-title"><div><p class="eyebrow">حافظه غذایی</p><h2>اخیراً چی پختی؟</h2></div><button id="clearHistory" class="ghost danger" type="button">پاک کردن</button></div><div id="historyList" class="history-list"></div>
+    </section>
+  </main>
+
+  <dialog id="onboardingDialog"><form method="dialog" class="onboarding"><p class="eyebrow">فقط یک بار</p><h2>معمولاً برای چند نفر غذا می‌پزی؟</h2><p class="muted">هر وقت خواستی از صفحه اصلی تغییرش بده.</p><div id="onboardingPeople" class="people-grid"></div><button id="saveOnboarding" class="primary" value="default">شروع کنیم</button></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
