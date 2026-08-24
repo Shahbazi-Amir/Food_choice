@@ -37,9 +37,16 @@ npm run serve
 - `manifest.webmanifest` نصب PWA
 - `test/` تست موتور پیشنهاد
 
-## انتشار
+## انتشار روی GitHub Pages
 
-Workflow مربوط به GitHub Pages در `.github/workflows/pages.yml` بعد از merge به `main` اجرا می‌شود و تست‌ها را قبل از انتشار انجام می‌دهد.
+کد انتشار آماده است، اما GitHub اجازه نمی‌دهد `GITHUB_TOKEN` اولین بار Pages را برای یک مخزن فعال کند. برای انتشار فقط یک تنظیم یک‌باره لازم است:
+
+1. در GitHub وارد `Settings` مخزن شوید.
+2. بخش `Pages` را باز کنید.
+3. در `Build and deployment`، مقدار `Source` را روی `GitHub Actions` بگذارید.
+4. سپس از تب `Actions`، workflow با نام `Deploy Pages` را با `Run workflow` اجرا کنید.
+
+بعد از فعال‌شدن Pages، همین workflow تست‌ها را اجرا و نسخه استاتیک PWA را منتشر می‌کند. آدرس معمول پروژه پس از انتشار `https://shahbazi-amir.github.io/Food_choice/` خواهد بود.
 
 ## گام‌های بعدی پیشنهادی
 
