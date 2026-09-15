@@ -1,0 +1,14 @@
+[
+  {"id":"kabab-barg","name":"کباب برگ","category":"کباب و گریل","weight":"سنگین","cost":"گران","prep":35,"cook":20,"ingredients":["راسته گوسفند یا گوساله","پیاز","زعفران","کره"]},
+  {"id":"kabab-chenjeh","name":"کباب چنجه","category":"کباب و گریل","weight":"سنگین","cost":"گران","prep":30,"cook":20,"ingredients":["گوشت تکه‌ای","پیاز","فلفل دلمه","لیمو"]},
+  {"id":"kabab-bakhtiari","name":"کباب بختیاری","category":"کباب و گریل","weight":"سنگین","cost":"گران","prep":35,"cook":25,"ingredients":["مرغ","گوشت","پیاز","زعفران"]},
+  {"id":"joojeh-zaferani","name":"جوجه زعفرانی","category":"کباب و گریل","weight":"متوسط","cost":"معمولی","prep":30,"cook":25,"ingredients":["مرغ","زعفران","پیاز","لیمو"]},
+  {"id":"steak-goosht","name":"استیک گوشت","category":"کباب و گریل","weight":"سنگین","cost":"گران","prep":15,"cook":15,"ingredients":["استیک گوشت","کره","سیر","فلفل"]},
+  {"id":"sabzijat-grill","name":"سبزیجات گریل","category":"کباب و گریل","weight":"سبک","cost":"اقتصادی","prep":15,"cook":20,"ingredients":["کدو","فلفل دلمه","قارچ","پیاز","لیمو"]},
+  {"id":"morgh-tanouri","name":"مرغ تنوری","category":"کباب و گریل","weight":"متوسط","cost":"معمولی","prep":25,"cook":55,"ingredients":["مرغ","پیاز","زعفران","لیمو","سیب‌زمینی"]},
+  {"id":"mahi-tanouri","name":"ماهی تنوری","category":"ماهی و دریایی","weight":"سبک","cost":"گران","prep":20,"cook":30,"ingredients":["ماهی","لیمو","سیر","سبزی معطر"]},
+  {"id":"koofteh-tabrizi","name":"کوفته تبریزی","category":"غذای نانی و خوراک","weight":"سنگین","cost":"معمولی","prep":45,"cook":75,"ingredients":["گوشت چرخ‌کرده","لپه","برنج","سبزی کوفته","تخم‌مرغ"]},
+  {"id":"dolmeh-barg-mo","name":"دلمه برگ مو","category":"غذای نانی و خوراک","weight":"متوسط","cost":"معمولی","prep":40,"cook":55,"ingredients":["برگ مو","برنج","لپه","سبزی دلمه"]},
+  {"id":"abgoosht-bozbash","name":"آبگوشت بزباش","category":"غذای نانی و خوراک","weight":"سنگین","cost":"معمولی","prep":30,"cook":150,"ingredients":["گوشت","لوبیا","سبزی","سیب‌زمینی"]},
+  {"id":"tahchin-bademjan","name":"ته‌چین بادمجان","category":"پلو و چلو","weight":"متوسط","cost":"معمولی","prep":35,"cook":60,"ingredients":["برنج","بادمجان","ماست","تخم‌مرغ","زعفران"]}
+]
