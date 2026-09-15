@@ -75,7 +75,7 @@ def score_food(food: dict, *, time_filter: str = "مهم نیست", selected_cos
     selected_weights = selected_weights or []
     selected_categories = selected_categories or []
     history = history or []
-    mult = lambda key: 2.4 if priority == key else 1.0
+    mult = lambda key: 4.0 if priority == key else 1.0
     score = 70 if food.get("_source") == "usual" else 28 if food.get("_source") == "try" else 0
     misses, matches = [], []
 
