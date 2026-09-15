@@ -13,34 +13,17 @@
 <body>
   <main class="app-shell">
     <header class="app-header">
-      <div>
-        <p class="eyebrow">FOOD CHOICE · نسخه آزمایشی</p>
-        <h1>چی بپزم؟ 🍲</h1>
-        <p class="subhead">چند سؤال ساده؛ بعد فقط یک پیشنهاد مناسب.</p>
-      </div>
+      <div><p class="eyebrow">FOOD CHOICE · نسخه آزمایشی</p><h1>چی بپزم؟ 🍲</h1><p class="subhead">از غذاهای خودت، نزدیک‌ترین انتخاب به شرایط امروز.</p></div>
       <button id="resetApp" class="link-button hidden" type="button">شروع دوباره</button>
     </header>
 
     <section id="setupStep1" class="screen card">
       <div class="step-label">مرحله ۱ از ۲</div>
       <h2>معمولاً چه غذاهایی می‌پزی؟</h2>
-      <p class="muted">هر غذایی که در برنامه عادی خانه‌تان هست انتخاب کن. پیشنهادهای اصلی بیشتر از همین‌ها خواهند بود.</p>
-      <div class="setup-tools">
-        <button id="selectDefaults" class="soft-button" type="button">انتخاب چند غذای رایج</button>
-        <button id="clearUsual" class="soft-button" type="button">پاک کردن انتخاب‌ها</button>
-      </div>
+      <p class="muted">از کاتالوگ ۷۰ غذایی انتخاب کن. پیشنهادهای اصلی فقط از غذاهای معمول خودت و غذاهایی که خودت برای امتحان انتخاب می‌کنی خواهند بود.</p>
+      <div class="setup-tools"><button id="selectDefaults" class="soft-button" type="button">انتخاب چند غذای رایج</button><button id="clearUsual" class="soft-button" type="button">پاک کردن انتخاب‌ها</button></div>
       <div id="usualFoodGroups" class="food-groups"></div>
-      <div class="people-box">
-        <div>
-          <strong>معمولاً برای چند نفر؟</strong>
-          <small>بعداً هم می‌توانی عوضش کنی.</small>
-        </div>
-        <div class="stepper">
-          <button id="peopleMinus" type="button" aria-label="کم کردن نفرات">−</button>
-          <span id="peopleCount">4</span>
-          <button id="peoplePlus" type="button" aria-label="زیاد کردن نفرات">+</button>
-        </div>
-      </div>
+      <div class="people-box"><div><strong>معمولاً برای چند نفر؟</strong><small>بعداً هم می‌توانی عوضش کنی.</small></div><div class="stepper"><button id="peopleMinus" type="button" aria-label="کم کردن نفرات">−</button><span id="peopleCount">4</span><button id="peoplePlus" type="button" aria-label="زیاد کردن نفرات">+</button></div></div>
       <p id="usualError" class="error-text hidden">حداقل ۳ غذا انتخاب کن تا پیشنهادها معنی‌دار شوند.</p>
       <button id="goToTryFoods" class="primary-button" type="button">ادامه</button>
     </section>
@@ -48,118 +31,55 @@
     <section id="setupStep2" class="screen card hidden">
       <div class="step-label">مرحله ۲ از ۲</div>
       <h2>دوست داری این‌ها را هم گاهی امتحان کنی؟ ✨</h2>
-      <p class="muted">این غذاها جای غذاهای معمولت را نمی‌گیرند؛ فقط گاهی وارد پیشنهادها می‌شوند.</p>
+      <p class="muted">هر موردی که انتخاب کنی وارد مجموعه پیشنهادهای جدیدت می‌شود؛ غذای دیگری خارج از انتخابت خودسرانه پیشنهاد نمی‌شود.</p>
       <div id="tryFoodList" class="try-grid"></div>
-      <div class="two-actions">
-        <button id="skipTryFoods" class="secondary-button" type="button">فعلاً نه</button>
-        <button id="saveProfile" class="primary-button" type="button">ذخیره و شروع</button>
-      </div>
+      <div class="two-actions"><button id="skipTryFoods" class="secondary-button" type="button">فعلاً نه</button><button id="saveProfile" class="primary-button" type="button">ذخیره و شروع</button></div>
     </section>
 
     <section id="mainScreen" class="screen hidden">
-      <section class="summary-strip card compact-card">
-        <div>
-          <span class="muted">پروفایل من</span>
-          <strong id="profileSummary"></strong>
-        </div>
-        <button id="editProfile" class="link-button" type="button">ویرایش</button>
-      </section>
+      <section class="summary-strip card compact-card"><div><span class="muted">پروفایل من</span><strong id="profileSummary"></strong></div><button id="editProfile" class="link-button" type="button">ویرایش</button></section>
 
       <section class="card filters-card">
         <h2>امروز چه شرایطی داری؟</h2>
-        <p class="muted">می‌توانی چند شرط را با هم انتخاب کنی.</p>
+        <p class="muted">همه شرط‌ها را می‌توانی با هم بزنی. اگر ترکیب دقیق پیدا نشود، نزدیک‌ترین گزینه را می‌دهم؛ نه صفحه خالی.</p>
 
         <div class="filter-block">
-          <h3>⏱ چقدر وقت داری؟</h3>
-          <div id="timeOptions" class="choice-row single-choice">
-            <button class="choice active" data-time="any" type="button">مهم نیست</button>
-            <button class="choice" data-time="30" type="button">تا ۳۰ دقیقه</button>
-            <button class="choice" data-time="60" type="button">تا ۱ ساعت</button>
-            <button class="choice" data-time="90" type="button">تا ۱ ساعت و نیم</button>
-            <button class="choice" data-time="120" type="button">تا ۲ ساعت</button>
+          <h3>⭐ مهم‌ترین معیار امروز کدام است؟</h3>
+          <div id="priorityOptions" class="choice-row single-choice">
+            <button class="choice active" data-priority="balanced" type="button">تعادل همه</button>
+            <button class="choice" data-priority="time" type="button">زمان</button>
+            <button class="choice" data-priority="cost" type="button">هزینه</button>
+            <button class="choice" data-priority="weight" type="button">سبک بودن</button>
+            <button class="choice" data-priority="category" type="button">نوع غذا</button>
           </div>
         </div>
 
-        <div class="filter-block">
-          <h3>💰 هزینه</h3>
-          <div id="costOptions" class="choice-row multi-choice">
-            <button class="choice" data-value="اقتصادی" type="button">اقتصادی</button>
-            <button class="choice" data-value="معمولی" type="button">معمولی</button>
-            <button class="choice" data-value="گران" type="button">گران</button>
-          </div>
-          <small class="hint">هیچ‌کدام را نزنی یعنی هزینه مهم نیست.</small>
-        </div>
+        <div class="filter-block"><h3>⏱ چقدر وقت داری؟</h3><div id="timeOptions" class="choice-row single-choice"><button class="choice active" data-time="any" type="button">مهم نیست</button><button class="choice" data-time="30" type="button">تا ۳۰ دقیقه</button><button class="choice" data-time="60" type="button">تا ۱ ساعت</button><button class="choice" data-time="90" type="button">تا ۱ ساعت و نیم</button><button class="choice" data-time="120" type="button">تا ۲ ساعت</button></div></div>
 
-        <div class="filter-block">
-          <h3>🥗 سبک یا سنگین؟</h3>
-          <div id="weightOptions" class="choice-row multi-choice">
-            <button class="choice" data-value="سبک" type="button">سبک</button>
-            <button class="choice" data-value="متوسط" type="button">متوسط</button>
-            <button class="choice" data-value="سنگین" type="button">سنگین</button>
-          </div>
-        </div>
+        <div class="filter-block"><h3>💰 هزینه</h3><div id="costOptions" class="choice-row multi-choice"><button class="choice" data-value="اقتصادی" type="button">اقتصادی</button><button class="choice" data-value="معمولی" type="button">معمولی</button><button class="choice" data-value="گران" type="button">گران</button></div><small class="hint">هیچ‌کدام را نزنی یعنی هزینه مهم نیست.</small></div>
 
-        <div class="filter-block">
-          <h3>🍽️ نوع غذا</h3>
-          <div id="categoryOptions" class="choice-row multi-choice category-choices"></div>
-        </div>
+        <div class="filter-block"><h3>🥗 سبک یا سنگین؟</h3><div id="weightOptions" class="choice-row multi-choice"><button class="choice" data-value="سبک" type="button">سبک</button><button class="choice" data-value="متوسط" type="button">متوسط</button><button class="choice" data-value="سنگین" type="button">سنگین</button></div></div>
 
-        <label class="toggle-row">
-          <input id="allowTryFoods" type="checkbox" checked />
-          <span><strong>گاهی غذای جدید هم پیشنهاد بده</strong><small>از غذاهایی که خودم در مرحله قبل انتخاب کردم.</small></span>
-        </label>
+        <div class="filter-block"><h3>🍽️ نوع غذا</h3><div id="categoryOptions" class="choice-row multi-choice category-choices"></div></div>
 
+        <label class="toggle-row"><input id="allowTryFoods" type="checkbox" checked /><span><strong>گاهی غذای جدید هم پیشنهاد بده</strong><small>فقط از غذاهایی که خودم در مرحله قبل انتخاب کرده‌ام.</small></span></label>
         <button id="recommendBtn" class="primary-button giant" type="button">🎲 بگو چی بپزم</button>
       </section>
 
-      <section id="noResult" class="card result-empty hidden">
-        <div class="empty-icon">🤔</div>
-        <h2>با این شرط‌ها چیزی پیدا نکردم</h2>
-        <p class="muted">یکی از فیلترها را کمی بازتر کن و دوباره امتحان کن.</p>
-      </section>
+      <section id="noResult" class="card result-empty hidden"><div class="empty-icon">🤔</div><h2>پروفایل غذایی خالی است</h2><p class="muted">چند غذای معمول انتخاب کن تا بتوانم پیشنهاد بدهم.</p></section>
 
       <section id="resultCard" class="card result-card hidden" aria-live="polite">
-        <div class="result-top">
-          <div>
-            <span id="sourceBadge" class="source-badge"></span>
-            <h2 id="foodName"></h2>
-            <div id="foodBadges" class="badges"></div>
-          </div>
-          <div class="dish-icon">🍽️</div>
-        </div>
-
-        <div class="time-metrics">
-          <div class="metric"><span>آماده‌سازی</span><strong id="prepTime"></strong></div>
-          <div class="metric"><span>پخت</span><strong id="cookTime"></strong></div>
-          <div class="metric total"><span>زمان کل</span><strong id="totalTime"></strong></div>
-        </div>
-
-        <div class="ingredients-section">
-          <div class="section-head">
-            <h3>مواد اصلی</h3>
-            <span id="peopleLabel" class="mini-badge"></span>
-          </div>
-          <div id="ingredientsList" class="ingredient-pills"></div>
-        </div>
-
-        <div class="shopping-note">🛒 در مرحله بعد، با ثبت مواد موجود در خانه می‌گوییم این غذا خرید لازم دارد یا نه.</div>
-
-        <div class="two-actions result-actions">
-          <button id="acceptFood" class="primary-button" type="button">همینو می‌پزم ✓</button>
-          <button id="anotherFood" class="secondary-button" type="button">یکی دیگه</button>
-        </div>
+        <div class="result-top"><div><span id="sourceBadge" class="source-badge"></span><h2 id="foodName"></h2><div id="foodBadges" class="badges"></div></div><div class="dish-icon">🍽️</div></div>
+        <p id="fitMessage" class="shopping-note"></p>
+        <div class="time-metrics"><div class="metric"><span>آماده‌سازی</span><strong id="prepTime"></strong></div><div class="metric"><span>پخت</span><strong id="cookTime"></strong></div><div class="metric total"><span>زمان کل</span><strong id="totalTime"></strong></div></div>
+        <div class="ingredients-section"><div class="section-head"><h3>مواد اصلی</h3><span id="peopleLabel" class="mini-badge"></span></div><div id="ingredientsList" class="ingredient-pills"></div></div>
+        <div class="shopping-note">🛒 تشخیص خرید بعداً با ثبت مواد موجود در خانه اضافه می‌شود.</div>
+        <div class="two-actions result-actions"><button id="acceptFood" class="primary-button" type="button">همینو می‌پزم ✓</button><button id="anotherFood" class="secondary-button" type="button">یکی دیگه</button></div>
       </section>
 
-      <section id="historyCard" class="card history-card hidden">
-        <div class="section-head">
-          <div><h2>اخیراً چی پختی؟</h2><p class="muted small">برای اینکه پشت سر هم یک غذا پیشنهاد نشود.</p></div>
-          <button id="clearHistory" class="link-button danger" type="button">پاک کردن</button>
-        </div>
-        <div id="historyList" class="history-list"></div>
-      </section>
+      <section id="historyCard" class="card history-card hidden"><div class="section-head"><div><h2>اخیراً چی پختی؟</h2><p class="muted small">تا یک غذا پشت سر هم تکرار نشود.</p></div><button id="clearHistory" class="link-button danger" type="button">پاک کردن</button></div><div id="historyList" class="history-list"></div></section>
     </section>
   </main>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script type="module" src="./js/app.js"></script>
 </body>
