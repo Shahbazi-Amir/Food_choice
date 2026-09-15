@@ -17,11 +17,15 @@ npm run serve
 
 `http://localhost:4173`
 
-برای تست آنلاین می‌توانید همین branch را در StackBlitz باز کنید:
+برای تست آنلاین و دیدن مستقیم خود اپ، همین branch را در StackBlitz Preview باز کنید:
+
+`https://stackblitz.com/github/Shahbazi-Amir/Food_choice/tree/agent/testable-mvp-fixes?startScript=serve&embed=1&view=preview`
+
+اگر Preview خودکار اجرا نشد، نسخه کامل StackBlitz را باز کنید:
 
 `https://stackblitz.com/github/Shahbazi-Amir/Food_choice/tree/agent/testable-mvp-fixes?startScript=serve`
 
-اگر Preview خودکار اجرا نشد، در Terminal خود StackBlitz دستور زیر را اجرا کنید:
+و در Terminal دستور زیر را اجرا کنید:
 
 ```bash
 npm run serve
