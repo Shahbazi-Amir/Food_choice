@@ -1,1 +1,1 @@
-{"name":"food-choice","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node --test","serve":"python3 -m http.server 4173"}}
+{"name":"food-choice","version":"0.2.0","private":true,"type":"module","scripts":{"check":"node --check js/app.js && node --check js/db.js && node --check js/recommender.js && node --check sw.js && node --check tools/serve.mjs","test":"npm run check && node --test","serve":"node tools/serve.mjs"}}
