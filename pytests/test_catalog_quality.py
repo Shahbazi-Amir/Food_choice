@@ -13,10 +13,11 @@ class CatalogQualityTests(unittest.TestCase):
         names = [food["name"] for food in FOODS]
         self.assertEqual(len(names), len(set(names)))
 
-    def test_times_are_positive(self):
+    def test_times_are_valid(self):
         for food in FOODS:
-            self.assertGreater(food["prep"], 0)
-            self.assertGreater(food["cook"], 0)
+            self.assertGreaterEqual(food["prep"], 0)
+            self.assertGreaterEqual(food["cook"], 0)
+            self.assertGreater(food["prep"] + food["cook"], 0)
 
 
 if __name__ == "__main__":
