@@ -6,7 +6,6 @@ const COST_ORDER=['اقتصادی','معمولی','گران'];
 const WEIGHT_ORDER=['سبک','متوسط','سنگین'];
 
 function minDistance(value, selected, order){if(!selected?.length)return 0;const index=order.indexOf(value);return Math.min(...selected.map(item=>Math.abs(index-order.indexOf(item))))}
-
 function timeLimit(time){return time==='any'||time==null?null:Number(time)}
 
 export function buildCandidatePool(foods,usualNames,tryNames,{allowTry=true}={}){
@@ -18,7 +17,7 @@ export function buildCandidatePool(foods,usualNames,tryNames,{allowTry=true}={})
 }
 
 export function scoreFood(food,prefs={},priority='balanced',history=[]){
-  const multiplier=key=>priority===key?2.4:1;
+  const multiplier=key=>priority===key?4:1;
   let score=food._source==='usual'?70:food._source==='try'?28:0;
   const misses=[]; const matches=[];
   const limit=timeLimit(prefs.time);
