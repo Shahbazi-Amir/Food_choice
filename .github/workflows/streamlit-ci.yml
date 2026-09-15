@@ -1,0 +1,42 @@
+name: Streamlit CI
+on:
+  push:
+    branches:
+      - agent/streamlit-user-prototype
+  pull_request:
+    paths:
+      - 'streamlit_app.py'
+      - 'streamlit_foods.py'
+      - 'streamlit_logic.py'
+      - 'requirements.txt'
+      - 'pytests/**'
+      - '.github/workflows/streamlit-ci.yml'
+permissions:
+  contents: read
+jobs:
+  test-streamlit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile Python files
+        run: python -m py_compile streamlit_app.py streamlit_foods.py streamlit_logic.py
+      - name: Run logic tests
+        run: python -m unittest discover -s pytests -v
+      - name: Install Streamlit
+        run: pip install -r requirements.txt
+      - name: Smoke test Streamlit UI
+        run: |
+          streamlit run streamlit_app.py --server.headless true --server.address 127.0.0.1 --server.port 8501 > /tmp/streamlit.log 2>&1 &
+          PID=$!
+          trap 'kill $PID' EXIT
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8501/_stcore/health | grep -q ok; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/streamlit.log
+          exit 1
